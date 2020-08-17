@@ -1,3 +1,4 @@
+// moj kod
 const router = require("express").Router();
 const User = require("../models/user-model");
 
@@ -7,12 +8,12 @@ router.route("/").get((req, res) => {
     .catch((err) => res.status(400).json("Error" + err));
 });
 
-router.route("/add ").post((req, res) => {
+router.route("/add").post((req, res) => {
   const username = req.body.username;
   const newUser = new User({ username });
   newUser
     .save()
-    .then(() => res.json("Useradded"))
+    .then(() => res.send("Useradded"))
     .catch((err) => res.status(400).json("Error" + err));
 });
 
