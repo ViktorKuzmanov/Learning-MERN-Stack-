@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const usersRouter = require("./routes/users-routes");
 
 require("dotenv").config();
 
@@ -18,6 +19,7 @@ mongoose.connection.once("open", () => {
 
 app.use(cors());
 app.use(express.json());
+app.use("/users", usersRouter);
 
 app.listen(5000, () => {
   console.log(`Listening on port ${port}`);
