@@ -1,13 +1,8 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  );
+  return <Router>aa</Router>;
 }
 
 export default App;
