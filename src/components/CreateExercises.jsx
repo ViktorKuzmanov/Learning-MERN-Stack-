@@ -11,7 +11,42 @@ export default class CreateExercises extends Component {
       users: [],
     };
   }
+
+  onChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({ [name]: value });
+    console.log(this.state);
+  };
+
   render() {
-    return <p>CreateExercises component</p>;
+    return (
+      <div>
+        <h3>Create exercise</h3>
+        <form action="" onSubmit={this.onSubmit}>
+          <input
+            onChange={this.onChange}
+            type="text"
+            name="username"
+            placeholder="username"
+            value={this.state.username}
+          />
+          <input
+            onChange={this.onChange}
+            type="text"
+            name="description"
+            placeholder="description"
+            value={this.state.description}
+          />
+          <input
+            onChange={this.onChange}
+            type="number"
+            name="duration"
+            placeholder="duration"
+            value={this.state.duration}
+          />
+        </form>
+      </div>
+    );
   }
 }
