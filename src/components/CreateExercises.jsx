@@ -29,13 +29,16 @@ export default class CreateExercises extends Component {
       <div>
         <h3>Create exercise</h3>
         <form action="" onSubmit={this.onSubmit}>
-          <input
-            onChange={this.onChange}
-            type="text"
-            name="username"
-            placeholder="username"
-            value={this.state.username}
-          />
+          <label>Username:</label>
+          <select>
+            {this.state.users.map((user) => {
+              return (
+                <option key={user} value={user}>
+                  {user}
+                </option>
+              );
+            })}
+          </select>
           <input
             onChange={this.onChange}
             type="text"
