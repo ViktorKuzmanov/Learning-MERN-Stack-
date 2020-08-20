@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default class CreateExercises extends Component {
   constructor(props) {
@@ -22,6 +24,13 @@ export default class CreateExercises extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     console.log("submit");
+  };
+
+  onChangeDate = (date) =>  {
+    this.setState({
+      date: date,
+    });
+    console.log(this.state);
   };
 
   render() {
@@ -53,6 +62,16 @@ export default class CreateExercises extends Component {
             placeholder="duration"
             value={this.state.duration}
           />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <DatePicker selected={this.state.date} onChange={this.onChangeDate} />
           <button type="submit">Create exercise</button>
         </form>
       </div>
