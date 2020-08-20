@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
 
 export default class CreateExercises extends Component {
   constructor(props) {
@@ -39,7 +38,14 @@ export default class CreateExercises extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    console.log("submit");
+
+    const exercise = {
+      username: this.state.username,
+      description: this.state.description,
+      duration: this.state.duration,
+      date: this.state.date,
+    };
+    console.log(exercise);
   };
 
   onChangeDate = (date) => {
