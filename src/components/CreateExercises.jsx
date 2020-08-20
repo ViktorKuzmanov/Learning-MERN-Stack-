@@ -19,6 +19,11 @@ export default class CreateExercises extends Component {
     console.log(this.state);
   };
 
+  onSubmit = (event) => {
+    event.preventDefault();
+    console.log("submit");
+  };
+
   render() {
     return (
       <div>
@@ -45,6 +50,7 @@ export default class CreateExercises extends Component {
             placeholder="duration"
             value={this.state.duration}
           />
+          <button type="submit">Create exercise</button>
         </form>
       </div>
     );
