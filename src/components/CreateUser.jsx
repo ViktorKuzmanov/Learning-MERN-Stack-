@@ -1,4 +1,3 @@
-// TODO: Implement this component
 import React, { Component } from "react";
 
 export default class CreateUsers extends Component {
@@ -14,11 +13,20 @@ export default class CreateUsers extends Component {
     console.log(this.state.username);
   };
 
+  onSubmit = (event) => {
+    event.preventDefault();
+
+    const user = {
+      username: this.state.username,
+    };
+    this.setState({ username: "" });
+  };
+
   render() {
     return (
       <div>
         <p>Create new user</p>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <input
             type="text"
             onChange={this.onChangeUsername}
