@@ -9,6 +9,14 @@ export default class CreateUsers extends Component {
   }
 
   render() {
-    return <p>CreateUsers component</p>;
+    return (
+      <div>
+        <p>Create new user</p>
+        <form>
+          <input type="text" placeholder="username" required />
+          <button type="submit">Create user</button>
+        </form>
+      </div>
+    );
   }
 }
