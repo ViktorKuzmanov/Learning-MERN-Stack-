@@ -16,7 +16,28 @@ export default class ExercisesList extends Component {
       })
       .catch((err) => console.log(err));
   }
+
+  exercisesList = () => {
+    
+  };
+
   render() {
-    return <p>ExercisesList component</p>;
+    return (
+      <div>
+        <h3>Exercises:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Description</th>
+              <th>Duration</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>{this.exercisesList()}</tbody>
+        </table>
+      </div>
+    );
   }
 }
